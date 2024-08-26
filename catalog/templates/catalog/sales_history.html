@@ -1,0 +1,11 @@
+
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>История продаж</h1>
+  <ul>
+    {% for sale in sales %}
+      <li>{{ sale.sale_date }}: {{ sale.car.model.make.name }} {{ sale.car.model.name }} продан {{ sale.buyer.name }} за {{ sale.price }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

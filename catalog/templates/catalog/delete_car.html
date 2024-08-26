@@ -1,0 +1,11 @@
+
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>Удалить {{ car.model.make.name }} {{ car.model.name }} ({{ car.year }})?</h1>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Да, удалить</button>
+    <a href="{% url 'car_detail' car.id %}">Отмена</a>
+  </form>
+{% endblock %}

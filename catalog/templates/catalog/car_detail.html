@@ -1,0 +1,12 @@
+
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>{{ car.model.make.name }} {{ car.model.name }} ({{ car.year }})</h1>
+  <p>Цена: {{ car.price }} руб.</p>
+  <p>Пробег: {{ car.mileage }} км</p>
+  <p>Описание: {{ car.description }}</p>
+  <img src="{{ car.image.url }}" alt="Изображение автомобиля">
+  <p><a href="{% url 'car_edit' car.pk %}">Редактировать</a> | <a href="{% url 'car_delete' car.pk %}">Удалить</a></p>
+  <a href="{% url 'car_list' %}">Назад к списку</a>
+{% endblock %}

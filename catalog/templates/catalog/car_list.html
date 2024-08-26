@@ -1,0 +1,12 @@
+
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>Список автомобилей</h1>
+  <ul>
+    {% for car in cars %}
+      <li><a href="{% url 'car_detail' car.pk %}">{{ car.model.make.name }} {{ car.model.name }} ({{ car.year }})</a></li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'car_create' %}">Добавить новый автомобиль</a>
+{% endblock %}
